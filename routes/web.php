@@ -16,9 +16,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+//auth route for both
+Route::group(['middleware' => ['auth']], function() {
+    Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index')->name('dashboard');
+});
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+// for teacherstudent
+Route::group(['middleware' => ['auth', 'role:student']], function() {
+    Route::get('/dashboard/myprofile', 'App\Http\Controllers\DashboardController@myprofile')->name('dashboard.myprofile');
+});
+
+// for teacher
+Route::group(['middleware' => ['auth', 'role:teacher']], function() {
+    Route::get('/dashboard/myprofile', 'App\Http\Controllers\DashboardController@myprofile')->name('dashboard.myprofile');
+});
 
 require __DIR__.'/auth.php';
