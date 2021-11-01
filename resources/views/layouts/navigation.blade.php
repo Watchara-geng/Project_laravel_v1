@@ -11,11 +11,14 @@
                 </div>
 
                 <!-- Navigation Links -->
+            
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
+                
+                
                 @if (Auth::user()->hasRole('student'))
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('dashboard.myprofile')" :active="request()->routeIs('dashboard.myprofile')">
@@ -26,11 +29,21 @@
 
                 @if (Auth::user()->hasRole('teacher'))
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('dashboard.myprofile')" :active="request()->routeIs('dashboard.myprofile')">
-                        {{ __('My Profile') }}
+                    
+                    
+                    <x-nav-link :href="route('dashboard.postcreate')" :active="request()->routeIs('dashboard.postcreate')">
+                        {{ __('Post Create') }}
                     </x-nav-link>
+                  
+                    
+                   
                 </div>
                 @endif
+               
+                
+                    
+                    
+                
             </div>
 
             <!-- Settings Dropdown -->
