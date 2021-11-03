@@ -9,5 +9,11 @@ class Teacher extends Model
 {
     use HasFactory;
     protected $table = "teachers";
+    protected $fillable = ['fname','lname','academic_pos','email'];
     
+    public function paper()
+    {
+        return $this->belongsToMany(Paper::class,'teacher_papers');
+        // OR return $this->belongsTo('App\User');
+    }
 }

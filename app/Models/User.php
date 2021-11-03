@@ -44,5 +44,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    
+    public function teacher()
+    {
+        return $this->hasOne(Teacher::class);
+        // OR return $this->hasOne('App\Phone');
+    }
 }

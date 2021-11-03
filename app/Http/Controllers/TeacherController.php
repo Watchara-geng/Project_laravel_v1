@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Teacher;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class TeacherController extends Controller
 {
@@ -13,13 +14,16 @@ class TeacherController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         //$data=Teacher::all();
-        //return view('teacher',compact(['data']));
-        // get user and mobile data from User model
-        $user = Teacher::find(5);
-        return view('teacher',compact(['user']));
+        return view('teacher');
+        //$teacher = Teacher::with('User')->get();
+        //$data = User::find(5)->teacher;
+        //$email = $teacher->email;
+
+       // return TeacherRsource
     }
 
     /**

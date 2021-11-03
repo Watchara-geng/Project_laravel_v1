@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TeacherController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,8 +19,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Route::resource('researchers', [App\Http\Controllers\TeacherController::class, 'index']);
+//Route::resource('researchers', [App\Http\Controllers\TeacherController::class, 'callapi']);
 Route::resource('researchers', TeacherController::class,["name"=>"researchers"]);
+
+
 
 //auth route for both
 Route::group(['middleware' => ['auth']], function() {

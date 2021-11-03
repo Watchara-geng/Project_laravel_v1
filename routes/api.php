@@ -1,7 +1,8 @@
 <?php
-
+namespace App\Http\Controllers\Api;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\TeacherController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//Route::apiResource('teachers', ApiTeacherController::class);
+//Route::resource('teachers', [App\Http\Controllers\Api\ApiTeacherController::class, 'index']);
+//Route::apiResource('teachers', App\Http\Controllers\Api\ApiTeacherController::class);
+Route::apiResource('teachers', ApiTeacherController::class);
+Route::apiResource('papers', ApiPaperController::class);
