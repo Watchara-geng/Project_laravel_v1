@@ -12,6 +12,7 @@
     <body>
 
         <div id="app">
+            <h1></h1>
             <teacher-component ></teacher-component>
         </div>
 
