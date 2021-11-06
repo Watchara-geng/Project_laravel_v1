@@ -16,15 +16,15 @@ class CreatePapersTable extends Migration
         Schema::create('papers', function (Blueprint $table) {
             $table->id();
             $table->string("paper_name");
-            $table->string("paper_type")->nullable();;
-            $table->string("paper_sourcetitle")->nullable();;
-            $table->string("paper_url")->nullable();;
-            $table->string("paper_yearpub")->nullable();;
-            $table->string("paper_volume")->nullable();;
-            $table->string("paper_issue")->nullable();;
-            $table->string("paper_citation")->nullable();;
-            $table->string("paper_page")->nullable();;
-            $table->string("paper_doi")->nullable();;
+            $table->string("paper_type")->nullable();
+            $table->string("paper_sourcetitle")->nullable();
+            $table->string("paper_url")->nullable();
+            $table->string("paper_yearpub")->nullable();
+            $table->string("paper_volume")->nullable();
+            $table->string("paper_issue")->nullable();
+            $table->string("paper_citation")->nullable();
+            $table->string("paper_page")->nullable();
+            $table->string("paper_doi")->nullable();
             $table->timestamps();
         });
     }

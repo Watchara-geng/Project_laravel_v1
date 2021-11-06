@@ -30,12 +30,7 @@ class ScopuscallController extends Controller
 
             //$check=$url["search-results"]["entry"];
             $content=$url["search-results"]["entry"];
-            //print(response()->json($content));
-            if(isset($url['search-results'])==true){
-                print_r('a');
-                break;
-                //continue;
-            }else{
+
 
             $links=$url["search-results"]["link"];
             //print_r($links);
@@ -55,35 +50,56 @@ class ScopuscallController extends Controller
             }while ($ref != 'prev');
 
             foreach($content as $item) {
-                if (Paper::where('paper_name', '=', $item['dc:title'])->first()==null){
-                    $paper = new Paper;
-                    $paper->paper_name = $item['dc:title'];
-                    $paper->paper_type = $item['prism:pageRange'];
-                    $paper->save();
-                    //$user = User::findOrFail($id);
-                    $paper->teacher()->sync($id);
+                if(array_key_exists('error', $item)){
+                    continue;
                 }
-
                 else{
-                    $paper = Paper::where('paper_name', '=', $item['dc:title'])->first();
-                    $paperid=$paper->id;
-                    $user = User::find($id);
+                    if (Paper::where('paper_name', '=', $item['dc:title'])->first()==null){
+                        $paper = new Paper;
+                        $paper->paper_name = $item['dc:title'];
+                        $paper->paper_type = $item['subtypeDescription'];
+                        $paper->paper_sourcetitle = $item['prism:publicationName'];
+                        $paper->paper_url = $item['prism:url'];
+                        $paper->paper_yearpub = $item['prism:coverDate'];
+                        if(array_key_exists('prism:volume', $item)){
+                            $paper->paper_volume = $item['prism:volume'];
+                        }
+                        else{
+                            $paper->paper_volume = null;
+                        }
+                        $paper->paper_citation = $item['citedby-count'];
+                        $paper->paper_page = $item['prism:pageRange'];
+                        if(array_key_exists('prism:doi', $item)){
+                            $paper->paper_doi = $item['prism:doi'];
 
-                    $hasTask = $user->paper()->where('paper_id', $paperid)->exists();
-                    if ($hasTask!=$paperid){
-                        /*$user = new User;
-                        $paper = Paper::find($paperid);
-                        $$user->paper()->sync($paper);*/
-                        $paper = Paper::find($paperid);
-                        $paper->teacher()->attach($id);
+                        }else{
+                            $paper->paper_doi = null;
+                        }
+                        $paper->save();
+                        //$user = User::findOrFail($id);
+                        $paper->teacher()->sync($id);
                     }
+
                     else{
-                        continue;
+                        $paper = Paper::where('paper_name', '=', $item['dc:title'])->first();
+                        $paperid=$paper->id;
+                        $user = User::find($id);
+
+                        $hasTask = $user->paper()->where('paper_id', $paperid)->exists();
+                        if ($hasTask!=$paperid){
+                            /*$user = new User;
+                            $paper = Paper::find($paperid);
+                            $$user->paper()->sync($paper);*/
+                            $paper = Paper::find($paperid);
+                            $paper->teacher()->attach($id);
+                        }
+                        else{
+                            continue;
+                        }
                     }
                 }
-
             }
-        }
+
     }
     return 'succes';
 
