@@ -4,8 +4,9 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\TeacherResource;
-use Illuminate\Http\Request;
 use App\Models\Teacher;
+use Illuminate\Http\Request;
+use App\Models\User;
 class ApiTeacherController extends Controller
 {
     /**
@@ -17,9 +18,10 @@ class ApiTeacherController extends Controller
     {
         //$teacher = Teacher::all()->makeHidden(['created_at','updated_at']);;
         //return response()->json($teacher);
-        $teacher = Teacher::with('Paper')->get();
-        //return response()->json($teacher);
-        return TeacherResource::collection($teacher);
+        $user = User::with('Paper')->get();
+        //$user = [1,2,3];
+        //return response()->json($user);
+        return TeacherResource::collection($user);
     }
 
     /**
@@ -41,9 +43,17 @@ class ApiTeacherController extends Controller
      */
     public function show($id)
     {
-        $teacher = Teacher::findOrFail($id);
-        return response()->json($teacher);
+        $teacher = User::findOrFail($id);
+        return new TeacherResource($teacher);
+
     }
+    /*public function show(User $user)
+    {
+        return response()->json($user);
+        //$teacher = Teacher::with('Paper')->findOrFail($teacher);
+        //return $User;
+        //return TeacherResource::collection($teacher);
+    }*/
 
     /**
      * Update the specified resource in storage.

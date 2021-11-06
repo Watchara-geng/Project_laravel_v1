@@ -17,12 +17,12 @@ class TeacherResource extends JsonResource
 
         return[
             'id'=> $this->id,
-            'user_id'=> $this->user_id,
             'fname'=>$this->fname,
             'lname'=> $this->lname,
             'academic_pos'=>$this->academic_pos,
             'email'=> $this->email,
-            'paper'=>$this->user,
+            'author_name' => $this->lname .' '. substr($this->fname,0,1).'.',
+            'paper'=>$this->paper
 
         ];
         return parent::toArray($request);

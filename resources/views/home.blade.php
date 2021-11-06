@@ -15,6 +15,10 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+
+                    You're logged in as {{Auth::user()->roles->first()->name}}! <br>
+                    Your name is: {{Auth::user()->name}} <br>
+                    Your email addrress: {{Auth::user()->email}}
                 </div>
             </div>
         </div>

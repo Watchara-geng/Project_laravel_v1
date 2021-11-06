@@ -2111,21 +2111,160 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   //name:'edit',
   props: ['id'],
   data: function data() {
     return {
-      paper_name: '',
-      paper_url: '',
-      paper_citation: '',
-      paper_page: ''
+      fname: '',
+      lname: '',
+      academic_pos: '',
+      email: '',
+      papers: []
     };
   },
   mounted: function mounted() {
-    axios.get('/api/papers/' + this.id).then(function (Response) {
-      console.log(Response.data);
-    }); //console.log(this.id);
+    var _this = this;
+
+    axios.get('/api/teachers/' + this.id).then(function (Response) {
+      var teacher = Response.data.data;
+      _this.fname = teacher.fname;
+      _this.lname = teacher.lname;
+      _this.academic_pos = teacher.academic_pos;
+      _this.email = teacher.email;
+      _this.papers = teacher.paper;
+    });
+  },
+  methods: {
+    addNewPaperTeacher: function addNewPaperTeacher() {
+      axios.post('/api/teachers', {
+        fname: this.fname,
+        lname: this.lname,
+        academic_pos: this.academic_pos,
+        email: this.email
+      });
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ScopusComponent.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ScopusComponent.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  mounted: function mounted() {
+    var _this = this;
+
+    axios.get('https://api.elsevier.com/content/search/scopus?query=orcid(0000-0001-7579-2485)&apikey=8c233a51930aa900046a5311f814ca29').then(function (response) {
+      _this.papers = response.data['search-results']['entry'];
+      console.log(_this.papers);
+    });
+  },
+  data: function data() {
+    return {
+      papers: [],
+      paper: {
+        paper_name: ''
+      }
+    };
+  },
+  methods: {
+    addNewPaperTeacher: function addNewPaperTeacher() {
+      var _this2 = this;
+
+      axios.get('https://api.elsevier.com/content/search/scopus?query=orcid(0000-0001-7579-2485)&apikey=8c233a51930aa900046a5311f814ca29').then(function (response) {
+        _this2.papers = response.data['search-results']['entry'];
+        console.log(_this2.papers);
+
+        for (var i = 0; i < _this2.papers.length; i++) {
+          /*axios.post('/api/papers',{
+              user_id:2,
+              paper_name:paper['dc:title'],
+          });*/
+          console.log(papers);
+        }
+      });
+    },
+    callscopus: function callscopus() {
+      var _this3 = this;
+
+      axios.get('https://api.elsevier.com/content/search/scopus?query=orcid(0000-0001-7579-2485)&apikey=8c233a51930aa900046a5311f814ca29').then(function (response) {
+        _this3.papers = response.data['search-results'];
+        console.log(_this3.papers);
+      });
+    }
   }
 });
 
@@ -2195,29 +2334,38 @@ __webpack_require__.r(__webpack_exports__);
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
   \*****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
-/* harmony import */ var _components_ExampleComponent_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue");
-/* harmony import */ var _components_TeacherComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/TeacherComponent.vue */ "./resources/js/components/TeacherComponent.vue");
-/* harmony import */ var _components_PaperComponent_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/PaperComponent.vue */ "./resources/js/components/PaperComponent.vue");
+/**
+ * First we will load all of this project's JavaScript dependencies which
+ * includes Vue and other libraries. It is a great starting point when
+ * building robust, powerful web applications using Vue and Laravel.
+ */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
- // importing compoment
+window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js")["default"];
+/**
+ * The following block of code may be used to automatically register your
+ * Vue components. It will recursively scan this directory for the Vue
+ * components and automatically register them with their "basename".
+ *
+ * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
+ */
+// const files = require.context('./', true, /\.vue$/i)
+// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
+Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]);
+Vue.component('teacher-component', __webpack_require__(/*! ./components/TeacherComponent.vue */ "./resources/js/components/TeacherComponent.vue")["default"]);
+Vue.component('paper-component', __webpack_require__(/*! ./components/PaperComponent.vue */ "./resources/js/components/PaperComponent.vue")["default"]);
+Vue.component('scopus-component', __webpack_require__(/*! ./components/ScopusComponent.vue */ "./resources/js/components/ScopusComponent.vue")["default"]);
+/**
+ * Next, we will create a fresh Vue application instance and attach it to
+ * the page. Then, you may begin adding components to this application
+ * or customize the JavaScript scaffolding to fit your unique needs.
+ */
 
-
- // creating a vue instance
-
-var app = new vue__WEBPACK_IMPORTED_MODULE_3__["default"]({
-  el: '#app',
-  components: {
-    "example-component": _components_ExampleComponent_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
-    "teacher-component": _components_TeacherComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-    "paper-component": _components_PaperComponent_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
-  }
+var app = new Vue({
+  el: '#app'
 });
 
 /***/ }),
@@ -34749,19 +34897,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/css/app.css":
-/*!*******************************!*\
-  !*** ./resources/css/app.css ***!
-  \*******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
 /***/ "./node_modules/popper.js/dist/esm/popper.js":
 /*!***************************************************!*\
   !*** ./node_modules/popper.js/dist/esm/popper.js ***!
@@ -37665,6 +37800,45 @@ component.options.__file = "resources/js/components/PaperComponent.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/ScopusComponent.vue":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/ScopusComponent.vue ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _ScopusComponent_vue_vue_type_template_id_43c136da___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ScopusComponent.vue?vue&type=template&id=43c136da& */ "./resources/js/components/ScopusComponent.vue?vue&type=template&id=43c136da&");
+/* harmony import */ var _ScopusComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ScopusComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/ScopusComponent.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _ScopusComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ScopusComponent_vue_vue_type_template_id_43c136da___WEBPACK_IMPORTED_MODULE_0__.render,
+  _ScopusComponent_vue_vue_type_template_id_43c136da___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/ScopusComponent.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/TeacherComponent.vue":
 /*!******************************************************!*\
   !*** ./resources/js/components/TeacherComponent.vue ***!
@@ -37736,6 +37910,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/ScopusComponent.vue?vue&type=script&lang=js&":
+/*!******************************************************************************!*\
+  !*** ./resources/js/components/ScopusComponent.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ScopusComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ScopusComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ScopusComponent.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ScopusComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
 /***/ "./resources/js/components/TeacherComponent.vue?vue&type=script&lang=js&":
 /*!*******************************************************************************!*\
   !*** ./resources/js/components/TeacherComponent.vue?vue&type=script&lang=js& ***!
@@ -37782,6 +37972,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PaperComponent_vue_vue_type_template_id_044bc37c___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PaperComponent_vue_vue_type_template_id_044bc37c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./PaperComponent.vue?vue&type=template&id=044bc37c& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/PaperComponent.vue?vue&type=template&id=044bc37c&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/ScopusComponent.vue?vue&type=template&id=43c136da&":
+/*!************************************************************************************!*\
+  !*** ./resources/js/components/ScopusComponent.vue?vue&type=template&id=43c136da& ***!
+  \************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ScopusComponent_vue_vue_type_template_id_43c136da___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ScopusComponent_vue_vue_type_template_id_43c136da___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ScopusComponent_vue_vue_type_template_id_43c136da___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ScopusComponent.vue?vue&type=template&id=43c136da& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ScopusComponent.vue?vue&type=template&id=43c136da&");
 
 
 /***/ }),
@@ -37867,16 +38074,121 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _c("div", { staticClass: "container" }, [
+      _c("h2", [_vm._v("งานวิจัย")]),
+      _vm._v(" "),
+      _c("h6", [_vm._v(_vm._s(_vm.fname))]),
+      _vm._v(" "),
+      _c("h6", [_vm._v(_vm._s(_vm.lname))]),
+      _vm._v(" "),
+      _c("h6", [_vm._v(_vm._s(_vm.academic_pos))]),
+      _vm._v(" "),
+      _c("h6", [_vm._v(_vm._s(_vm.email))]),
+      _vm._v(" "),
+      _c("table", { staticClass: "table" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "tbody",
+          _vm._l(_vm.papers, function (paper, idx) {
+            return _c("tr", { key: idx }, [
+              _c("td", [_vm._v(_vm._s(paper.paper_name))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(paper.paper_sourcetitle))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(paper.paper_doi))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(paper.paper_volume))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(paper.paper_page))]),
+            ])
+          }),
+          0
+        ),
+      ]),
+    ]),
+  ])
 }
 var staticRenderFns = [
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [_c("div", { staticClass: "container" })])
+    return _c("thead", [
+      _c("tr", [
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Paper Name")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("paper_sourcetitle")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("paper_doi")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("paper_volume")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("paper_page")]),
+      ]),
+    ])
   },
 ]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ScopusComponent.vue?vue&type=template&id=43c136da&":
+/*!***************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ScopusComponent.vue?vue&type=template&id=43c136da& ***!
+  \***************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c(
+      "div",
+      { staticClass: "container" },
+      [
+        _c("h2", [_vm._v("ระบบบันทึกข้อมูล")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-danger",
+              on: { click: _vm.addNewPaperTeacher },
+            },
+            [_vm._v(" Add")]
+          ),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c(
+            "button",
+            { staticClass: "btn btn-danger", on: { click: _vm.callscopus } },
+            [_vm._v(" call")]
+          ),
+        ]),
+        _vm._v(" "),
+        _vm._l(_vm.papers, function (paper, idx) {
+          return _c("div", { key: idx }, [
+            _c("h1", [_vm._v(_vm._s(paper["dc:title"]))]),
+          ])
+        }),
+      ],
+      2
+    ),
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -37910,7 +38222,7 @@ var render = function () {
             { key: idx, staticClass: "col-xs-12 col-sm-6 col-md-2 p-4" },
             [
               _c("div", { staticClass: "card card-block " }, [
-                _c("a", { attrs: { href: "/teachers/papers" } }, [
+                _c("a", { attrs: { href: "/researchers/" + teacher.id } }, [
                   _c("img", {
                     attrs: {
                       src: "data:image/jpeg;base64,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",
@@ -37921,7 +38233,7 @@ var render = function () {
                   _c(
                     "h5",
                     { staticClass: "card-title mt-3 mb-3 text-center" },
-                    [_vm._v(_vm._s(teacher.fname))]
+                    [_vm._v(_vm._s(teacher.fname) + " ")]
                   ),
                 ]),
               ]),
@@ -50282,8 +50594,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
 /******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/sass/app.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/css/app.css")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/sass/app.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

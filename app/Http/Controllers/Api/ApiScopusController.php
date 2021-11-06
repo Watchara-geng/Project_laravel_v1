@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
-use App\Models\Paper;
+use App\Http\Controllers\Controller;
+use App\Http\Resources\TeacherResource;
+use App\Models\Teacher;
 use Illuminate\Http\Request;
 use App\Models\User;
-class PaperController extends Controller
+class ApiScopusController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,30 +16,12 @@ class PaperController extends Controller
      */
     public function index()
     {
-        //$Paper = Paper::all();
+        //$teacher = Teacher::all()->makeHidden(['created_at','updated_at']);;
         //return response()->json($teacher);
-
-        //return response()->json([1,2,3]);
-        return view("paper");
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create(Request $request)
-    {
-        $paper = new Paper;
-        $paper->paper_name = 'God of War';
-        $paper->paper_type = 'ai';
-
-        $paper->save();
-
-        $user = User::findOrFail(1);
-        $paper->teacher()->attach($user);
-
-        return 'Success';
+        $user = User::with('Paper')->get();
+        //$user = [1,2,3];
+        //return response()->json($user);
+        return TeacherResource::collection($user);
     }
 
     /**
@@ -48,7 +32,7 @@ class PaperController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
@@ -59,19 +43,17 @@ class PaperController extends Controller
      */
     public function show($id)
     {
+        $teacher = User::findOrFail($id);
+        return new TeacherResource($teacher);
 
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    /*public function show(User $user)
     {
-        //
-    }
+        return response()->json($user);
+        //$teacher = Teacher::with('Paper')->findOrFail($teacher);
+        //return $User;
+        //return TeacherResource::collection($teacher);
+    }*/
 
     /**
      * Update the specified resource in storage.

@@ -1,19 +1,35 @@
+/**
+ * First we will load all of this project's JavaScript dependencies which
+ * includes Vue and other libraries. It is a great starting point when
+ * building robust, powerful web applications using Vue and Laravel.
+ */
+
 require('./bootstrap');
 
+window.Vue = require('vue').default;
 
-import Vue from 'vue'
+/**
+ * The following block of code may be used to automatically register your
+ * Vue components. It will recursively scan this directory for the Vue
+ * components and automatically register them with their "basename".
+ *
+ * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
+ */
 
-// importing compoment
-import ExampleComponent from './components/ExampleComponent.vue'
-import TeacherComponent from './components/TeacherComponent.vue'
-import PaperComponent from './components/PaperComponent.vue'
+// const files = require.context('./', true, /\.vue$/i)
+// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-// creating a vue instance
+Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('teacher-component', require('./components/TeacherComponent.vue').default);
+Vue.component('paper-component', require('./components/PaperComponent.vue').default);
+Vue.component('scopus-component', require('./components/ScopusComponent.vue').default);
+
+/**
+ * Next, we will create a fresh Vue application instance and attach it to
+ * the page. Then, you may begin adding components to this application
+ * or customize the JavaScript scaffolding to fit your unique needs.
+ */
+
 const app = new Vue({
     el: '#app',
-    components: {
-        "example-component": ExampleComponent,
-        "teacher-component": TeacherComponent,
-        "paper-component": PaperComponent
-    }
 });

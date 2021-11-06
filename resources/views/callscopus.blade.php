@@ -12,7 +12,7 @@
     <body>
 
         <div id="app">
-            <paper-component id="{!!$id!!}"></paper-component>
+            <scopus-component></scopus-component>
         </div>
 
         </div>

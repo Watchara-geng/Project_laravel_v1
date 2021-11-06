@@ -12,7 +12,7 @@
     <body>
 
         <div id="app">
-            <teacher-component ></teacher-component>
+            <teacher2-component ></teacher2-component>
         </div>
 
         </div>

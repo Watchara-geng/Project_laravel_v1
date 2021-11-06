@@ -9,9 +9,10 @@ class Paper extends Model
 {
     use HasFactory;
     protected $table = "papers";
+    
     public function teacher()
     {
-        return $this->belongsToMany(Teacher::class,'teacher_papers');
+        return $this->belongsToMany(User::class,'teacher_papers');
         // OR return $this->hasOne('App\Phone');
     }
 }

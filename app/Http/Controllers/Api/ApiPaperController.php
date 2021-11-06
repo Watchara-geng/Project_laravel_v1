@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\TeacherResource;
 use App\Models\Paper;
 use Illuminate\Http\Request;
-use App\Models\Teacher;
+use App\Models\User;
 class ApiPaperController extends Controller
 {
     /**
@@ -34,7 +34,16 @@ class ApiPaperController extends Controller
      */
     public function store(Request $request)
     {
+        $paper = new Paper;
+        $paper->paper_name = $request->get('paper_name');
+        $paper->paper_type = $request->get('paper_type');;
 
+        $paper->save();
+
+        $user = User::findOrFail($request->user_id);
+        $paper->teacher()->attach($user);
+
+        return 'Success';
     }
 
     /**
@@ -46,7 +55,7 @@ class ApiPaperController extends Controller
     public function show($id)
     {
         //$paper = Paper::findOrFail($id);
-        $teacher = Teacher::findOrFail($id);
+        $teacher = User::findOrFail($id);
         $teacher =$teacher->paper;
         return response()->json($teacher);
     }

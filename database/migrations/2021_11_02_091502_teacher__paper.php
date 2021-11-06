@@ -15,13 +15,13 @@ class TeacherPaper extends Migration
     {
         Schema::create('teacher_papers', function (Blueprint $table) {
             $table->bigIncrements('id');
-        
-            $table->unsignedBigInteger('teacher_id');
-            $table->foreign('teacher_id')
+
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')
                 ->references('id')
-                ->on('teachers')
+                ->on('users')
                 ->onDelete('cascade');
-            
+
             $table->unsignedBigInteger('paper_id');
             $table->foreign('paper_id')
                 ->references('id')

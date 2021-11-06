@@ -2,8 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TeacherController;
-
-
+use App\Http\Controllers\PaperController;
+use App\Http\Controllers\ScopuscallController;
+use App\Http\Controllers\ScopusController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,14 +19,25 @@ use App\Http\Controllers\TeacherController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('scopus', function () {
+    return view('callscopus');
+});
+
+//Route::get('scopuscall',"ScopusController@callapi");
+
 
 //Route::resource('researchers', [App\Http\Controllers\TeacherController::class, 'callapi']);
 Route::resource('researchers', TeacherController::class,["name"=>"researchers"]);
 
+Route::resource('paper', PaperController::class,["name"=>"papers"]);
+
+Route::resource('callscopus3', ScopuscallController::class);
+//Route::resource('scopus', ScopusController::class,["name"=>"papers"]);
+
 
 
 //auth route for both
-Route::group(['middleware' => ['auth']], function() {
+/*Route::group(['middleware' => ['auth']], function() {
     Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index')->name('dashboard');
 });
 
@@ -37,6 +49,22 @@ Route::group(['middleware' => ['auth', 'role:student']], function() {
 // for teacher
 Route::group(['middleware' => ['auth', 'role:teacher']], function() {
     Route::get('/dashboard/postcreate', 'App\Http\Controllers\DashboardController@postcreate')->name('dashboard.postcreate');
-});
+});*/
 
+//Route::resource('paper/create', 'PaperController@create');
+
+Route::get('/login', [AuthController::class, 'index'])->name('login');
+Route::post('/custom-signin', [AuthController::class, 'createSignin'])->name('signin.custom');
+
+
+Route::get('/register', [AuthController::class, 'signup'])->name('register');
+Route::post('/create-user', [AuthController::class, 'customSignup'])->name('user.registration');
+
+
+Route::get('/dashboard', [AuthController::class, 'dashboardView'])->name('dashboard');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 require __DIR__.'/auth.php';
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
