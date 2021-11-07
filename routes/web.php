@@ -26,7 +26,7 @@ Route::get('scopus', function () {
 //Route::get('scopuscall',"ScopusController@callapi");
 //Route::resource('researchers', [App\Http\Controllers\TeacherController::class, 'callapi']);
 
-Route::resource('researchers', TeacherController::class,["name"=>"researchers"]);
+Route::resource('/researcher', TeacherController::class,["name"=>"researchers"]);
 Route::resource('paper', PaperController::class,["name"=>"papers"]);
 Route::resource('callscopus3', ScopuscallController::class);
 //Route::resource('scopus', ScopusController::class,["name"=>"papers"]);

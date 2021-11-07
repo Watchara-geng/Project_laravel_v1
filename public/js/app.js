@@ -2303,6 +2303,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     this.getTeacherData();
@@ -2359,6 +2361,7 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
 Vue.component('teacher-component', __webpack_require__(/*! ./components/TeacherComponent.vue */ "./resources/js/components/TeacherComponent.vue")["default"]);
 Vue.component('paper-component', __webpack_require__(/*! ./components/PaperComponent.vue */ "./resources/js/components/PaperComponent.vue")["default"]);
 Vue.component('scopus-component', __webpack_require__(/*! ./components/ScopusComponent.vue */ "./resources/js/components/ScopusComponent.vue")["default"]);
+Vue.component('home-component', __webpack_require__(/*! ./components/indexComponent.vue */ "./resources/js/components/indexComponent.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -37879,6 +37882,43 @@ component.options.__file = "resources/js/components/TeacherComponent.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/indexComponent.vue":
+/*!****************************************************!*\
+  !*** ./resources/js/components/indexComponent.vue ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _indexComponent_vue_vue_type_template_id_078771d6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./indexComponent.vue?vue&type=template&id=078771d6& */ "./resources/js/components/indexComponent.vue?vue&type=template&id=078771d6&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
+  _indexComponent_vue_vue_type_template_id_078771d6___WEBPACK_IMPORTED_MODULE_0__.render,
+  _indexComponent_vue_vue_type_template_id_078771d6___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/indexComponent.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&":
 /*!*******************************************************************************!*\
   !*** ./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js& ***!
@@ -38007,6 +38047,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TeacherComponent_vue_vue_type_template_id_48862c26___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TeacherComponent_vue_vue_type_template_id_48862c26___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./TeacherComponent.vue?vue&type=template&id=48862c26& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TeacherComponent.vue?vue&type=template&id=48862c26&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/indexComponent.vue?vue&type=template&id=078771d6&":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/components/indexComponent.vue?vue&type=template&id=078771d6& ***!
+  \***********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_indexComponent_vue_vue_type_template_id_078771d6___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_indexComponent_vue_vue_type_template_id_078771d6___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_indexComponent_vue_vue_type_template_id_078771d6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./indexComponent.vue?vue&type=template&id=078771d6& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/indexComponent.vue?vue&type=template&id=078771d6&");
 
 
 /***/ }),
@@ -38215,7 +38272,9 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "container card-2" }, [
+      _c("p", [_vm._v(" Researchers ")]),
+      _vm._v(" "),
       _c(
         "div",
         { staticClass: "row" },
@@ -38224,22 +38283,22 @@ var render = function () {
             "div",
             { key: idx, staticClass: "col-xs-12 col-sm-6 col-md-2 p-4" },
             [
-              _c("div", { staticClass: "card card-block " }, [
+              _c("div", { staticClass: "card" }, [
                 _c("a", { attrs: { href: "/researchers/" + teacher.id } }, [
                   _c("img", {
-                    attrs: {
-                      src: teacher.picture,
-                      alt: "",
-                      width: "140",
-                      height: "175",
-                    },
+                    staticClass: "rounded mx-auto d-block",
+                    attrs: { src: teacher.picture },
                   }),
                   _vm._v(" "),
-                  _c(
-                    "h5",
-                    { staticClass: "card-title mt-3 mb-3 text-center" },
-                    [_vm._v(_vm._s(teacher.fname) + " ")]
-                  ),
+                  _c("div", { staticClass: "card-body" }, [
+                    _c("h5", { staticClass: "card-title" }, [
+                      _c("b", [
+                        _vm._v(
+                          _vm._s(teacher.fname) + " " + _vm._s(teacher.lname)
+                        ),
+                      ]),
+                    ]),
+                  ]),
                 ]),
               ]),
             ]
@@ -38251,6 +38310,156 @@ var render = function () {
   ])
 }
 var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/indexComponent.vue?vue&type=template&id=078771d6&":
+/*!**************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/indexComponent.vue?vue&type=template&id=078771d6& ***!
+  \**************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "container cards-1" }, [
+      _c("p", [_vm._v("Announcement")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row row-cols-1 row-cols-md-4 g-4" }, [
+        _c("div", { staticClass: "col" }, [
+          _c("div", { staticClass: "card" }, [
+            _c("img", {
+              staticClass: "card-img-top",
+              attrs: { src: "../image/img.jpg", alt: "..." },
+            }),
+            _vm._v(" "),
+            _vm._m(0),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col" }, [
+          _c("div", { staticClass: "card" }, [
+            _c("img", {
+              staticClass: "card-img-top",
+              attrs: { src: "../image/img.jpg", alt: "..." },
+            }),
+            _vm._v(" "),
+            _vm._m(1),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col" }, [
+          _c("div", { staticClass: "card" }, [
+            _c("img", {
+              staticClass: "card-img-top",
+              attrs: { src: "../image/img.jpg", alt: "..." },
+            }),
+            _vm._v(" "),
+            _vm._m(2),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col" }, [
+          _c("div", { staticClass: "card" }, [
+            _c("img", {
+              staticClass: "card-img-top",
+              attrs: { src: "../image/img.jpg", alt: "..." },
+            }),
+            _vm._v(" "),
+            _vm._m(3),
+          ]),
+        ]),
+      ]),
+    ]),
+    _vm._v(" "),
+    _vm._m(4),
+  ])
+}
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-body" }, [
+      _c("h5", { staticClass: "card-title" }, [_vm._v("title")]),
+      _vm._v(" "),
+      _c("p", { staticClass: "card-text" }, [
+        _vm._v(
+          "This is a longer card with supporting text below as a natural lead-in to\r\n                        additional content. This content is a little bit longer."
+        ),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-body" }, [
+      _c("h5", { staticClass: "card-title" }, [_vm._v("title")]),
+      _vm._v(" "),
+      _c("p", { staticClass: "card-text" }, [
+        _vm._v(
+          "This is a longer card with supporting text below as a natural lead-in to\r\n                        additional content. This content is a little bit longer."
+        ),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-body" }, [
+      _c("h5", { staticClass: "card-title" }, [_vm._v("title")]),
+      _vm._v(" "),
+      _c("p", { staticClass: "card-text" }, [
+        _vm._v(
+          "This is a longer card with supporting text below as a natural lead-in to\r\n                        additional content."
+        ),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-body" }, [
+      _c("h5", { staticClass: "card-title" }, [_vm._v("title")]),
+      _vm._v(" "),
+      _c("p", { staticClass: "card-text" }, [
+        _vm._v(
+          "This is a longer card with supporting text below as a natural lead-in to\r\n                        additional content. This content is a little bit longer."
+        ),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container mixpaper" }, [
+      _c("h3", [_vm._v("ผลงานตีพิมพ์ (5 ปี ย้อนหลัง)")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-lg-12" }, [
+          _c("div", { staticClass: "text-container" }, [
+            _c("h4", [_vm._v(" 2021 ")]),
+          ]),
+        ]),
+      ]),
+    ])
+  },
+]
 render._withStripped = true
 
 

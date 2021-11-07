@@ -1,9 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.layout')
 
 @section('content')
-<div class="container">
     <div id="app">
-        <teacher-component></teacher-component>
+        <home-component></home-component>
     </div>
-</div>
 @stop
