@@ -21,6 +21,7 @@ class TeacherResource extends JsonResource
             'lname'=> $this->lname,
             'academic_pos'=>$this->academic_pos,
             'email'=> $this->email,
+            'picture'=> $this->picture,
             'author_name' => $this->lname .' '. substr($this->fname,0,1).'.',
             'paper'=>$this->paper
 

@@ -4,8 +4,9 @@
         <h2>งานวิจัย</h2>
         <h6>{{fname}}</h6>
         <h6>{{lname}}</h6>
-    <h6>{{academic_pos}}</h6>
-    <h6>{{email}}</h6>
+        <img :src="'../'+picture">
+        <h6>{{academic_pos}}</h6>
+        <h6>{{email}}</h6>
 
 <table class="table">
   <thead>
@@ -21,7 +22,6 @@
   <tbody>
 
     <tr v-for="(paper, idx) in papers" :key="idx">
-
     <td>{{paper.paper_name}}</td>
     <td>{{paper.paper_sourcetitle}}</td>
     <td>{{paper.paper_doi}}</td>
@@ -51,6 +51,7 @@ export default {
             lname:'',
             academic_pos:'',
             email:'',
+            picture:'',
             papers:[]
         }
     },
@@ -62,8 +63,8 @@ export default {
             this.lname=teacher.lname;
             this.academic_pos=teacher.academic_pos;
             this.email=teacher.email;
+            this.picture=teacher.picture;
             this.papers=teacher.paper;
-
         });
 
     },
@@ -76,10 +77,13 @@ export default {
                 email:this.email,
 
             });
-        }
+        },
+
+
     }
 
 }
+
 </script>
 
 <style>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Paper;
+use App\Models\Source_data;
 use App\Models\Teacher;
 use Illuminate\Support\Facades\Http;
 class ScopuscallController extends Controller
@@ -27,6 +28,7 @@ class ScopuscallController extends Controller
                 'query' => "AUTHOR-NAME("."$lname".","."$fname".")",
                 'apikey'=> '6ab3c2a01c29f0e36b00c8fa1d013f83',
             ])->json();
+
 
             //$check=$url["search-results"]["entry"];
             $content=$url["search-results"]["entry"];
@@ -59,7 +61,8 @@ class ScopuscallController extends Controller
                         $paper->paper_name = $item['dc:title'];
                         $paper->paper_type = $item['subtypeDescription'];
                         $paper->paper_sourcetitle = $item['prism:publicationName'];
-                        $paper->paper_url = $item['prism:url'];
+                        $paper->paper_url = $item['link'][2]['@href'];
+                        //$paper->paper_yearpub = date('Y', $item['prism:coverDate']);
                         $paper->paper_yearpub = $item['prism:coverDate'];
                         if(array_key_exists('prism:volume', $item)){
                             $paper->paper_volume = $item['prism:volume'];
@@ -78,6 +81,9 @@ class ScopuscallController extends Controller
                         $paper->save();
                         //$user = User::findOrFail($id);
                         $paper->teacher()->sync($id);
+                        $source = Source_data::findOrFail(1);
+                        $paper->source()->sync($source);
+
                     }
 
                     else{
