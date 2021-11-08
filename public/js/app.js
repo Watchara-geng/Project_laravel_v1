@@ -2172,6 +2172,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   //name:'edit',
   props: ['id'],
@@ -2378,6 +2381,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
 //
 //
 //
@@ -38994,9 +38998,7 @@ var render = function () {
   return _c("div", [
     _c("div", { staticClass: "container" }, [
       _vm.loading
-        ? _c("div", { staticClass: "loader" }, [
-            _vm._v("\n            loading.........\n        "),
-          ])
+        ? _c("div", { staticClass: "loader" }, [_vm._m(0)])
         : _c("div", [
             _c("h2", [_vm._v("งานวิจัย")]),
             _vm._v(" "),
@@ -39010,16 +39012,16 @@ var render = function () {
             _vm._v(" "),
             _c("h6", [_vm._v(_vm._s(_vm.email))]),
             _vm._v(" "),
-            _c("h6", [_vm._v("citation_count " + _vm._s(_vm.citation_count))]),
+            _c("h6", [_vm._v("Citation count " + _vm._s(_vm.citation_count))]),
             _vm._v(" "),
-            _c("h6", [_vm._v("document_count " + _vm._s(_vm.document_count))]),
+            _c("h6", [_vm._v("Document count " + _vm._s(_vm.document_count))]),
             _vm._v(" "),
-            _c("h6", [_vm._v("cited_by_count " + _vm._s(_vm.cited_by_count))]),
+            _c("h6", [_vm._v("Cited By count " + _vm._s(_vm.cited_by_count))]),
             _vm._v(" "),
-            _c("h6", [_vm._v("hindex " + _vm._s(_vm.hindex))]),
+            _c("h6", [_vm._v("H-index " + _vm._s(_vm.hindex))]),
             _vm._v(" "),
             _c("table", { staticClass: "table" }, [
-              _vm._m(0),
+              _vm._m(1),
               _vm._v(" "),
               _c(
                 "tbody",
@@ -39048,6 +39050,19 @@ var render = function () {
   ])
 }
 var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "d-flex justify-content-center mt-5" }, [
+      _c("div", {
+        staticClass: "spinner-border text-info",
+        attrs: { role: "status" },
+      }),
+      _vm._v(" "),
+      _c("p", [_vm._v(" Loading...")]),
+    ])
+  },
   function () {
     var _vm = this
     var _h = _vm.$createElement
@@ -39162,23 +39177,25 @@ var render = function () {
             "div",
             { key: idx, staticClass: "col-xs-12 col-sm-6 col-md-2 p-4" },
             [
-              _c("div", { staticClass: "card" }, [
-                _c("a", { attrs: { href: "/researchers/" + teacher.id } }, [
-                  _c("img", {
-                    staticClass: "rounded mx-auto d-block",
-                    attrs: { src: teacher.picture },
-                  }),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "card-body" }, [
-                    _c("h5", { staticClass: "card-title" }, [
-                      _c("b", [
-                        _vm._v(
-                          _vm._s(teacher.fname) + " " + _vm._s(teacher.lname)
-                        ),
-                      ]),
-                    ]),
-                  ]),
+              _c("div", { staticClass: "card p-0" }, [
+                _c("div", { staticClass: "card-image" }, [
+                  _c("img", { attrs: { src: teacher.picture, alt: "" } }),
                 ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "card-content d-flex flex-column align-items-center",
+                  },
+                  [
+                    _c("h5", [
+                      _vm._v(
+                        _vm._s(teacher.fname) + " " + _vm._s(teacher.lname)
+                      ),
+                    ]),
+                  ]
+                ),
               ]),
             ]
           )
