@@ -2461,6 +2461,8 @@ Vue.component('teacher-component', __webpack_require__(/*! ./components/TeacherC
 Vue.component('paper-component', __webpack_require__(/*! ./components/PaperComponent.vue */ "./resources/js/components/PaperComponent.vue")["default"]);
 Vue.component('scopus-component', __webpack_require__(/*! ./components/ScopusComponent.vue */ "./resources/js/components/ScopusComponent.vue")["default"]);
 Vue.component('home-component', __webpack_require__(/*! ./components/indexComponent.vue */ "./resources/js/components/indexComponent.vue")["default"]);
+Vue.component('researchproj-component', __webpack_require__(/*! ./components/ResearchProjectComponent.vue */ "./resources/js/components/ResearchProjectComponent.vue")["default"]);
+Vue.component('researchgroup-component', __webpack_require__(/*! ./components/ResearchGroupComponent */ "./resources/js/components/ResearchGroupComponent.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -38667,6 +38669,80 @@ component.options.__file = "resources/js/components/PaperComponent.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/ResearchGroupComponent.vue":
+/*!************************************************************!*\
+  !*** ./resources/js/components/ResearchGroupComponent.vue ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _ResearchGroupComponent_vue_vue_type_template_id_1863eb64___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ResearchGroupComponent.vue?vue&type=template&id=1863eb64& */ "./resources/js/components/ResearchGroupComponent.vue?vue&type=template&id=1863eb64&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
+  _ResearchGroupComponent_vue_vue_type_template_id_1863eb64___WEBPACK_IMPORTED_MODULE_0__.render,
+  _ResearchGroupComponent_vue_vue_type_template_id_1863eb64___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/ResearchGroupComponent.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/ResearchProjectComponent.vue":
+/*!**************************************************************!*\
+  !*** ./resources/js/components/ResearchProjectComponent.vue ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _ResearchProjectComponent_vue_vue_type_template_id_388c14ec___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ResearchProjectComponent.vue?vue&type=template&id=388c14ec& */ "./resources/js/components/ResearchProjectComponent.vue?vue&type=template&id=388c14ec&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
+  _ResearchProjectComponent_vue_vue_type_template_id_388c14ec___WEBPACK_IMPORTED_MODULE_0__.render,
+  _ResearchProjectComponent_vue_vue_type_template_id_388c14ec___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/ResearchProjectComponent.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/ScopusComponent.vue":
 /*!*****************************************************!*\
   !*** ./resources/js/components/ScopusComponent.vue ***!
@@ -38876,6 +38952,40 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PaperComponent_vue_vue_type_template_id_044bc37c___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PaperComponent_vue_vue_type_template_id_044bc37c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./PaperComponent.vue?vue&type=template&id=044bc37c& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/PaperComponent.vue?vue&type=template&id=044bc37c&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/ResearchGroupComponent.vue?vue&type=template&id=1863eb64&":
+/*!*******************************************************************************************!*\
+  !*** ./resources/js/components/ResearchGroupComponent.vue?vue&type=template&id=1863eb64& ***!
+  \*******************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ResearchGroupComponent_vue_vue_type_template_id_1863eb64___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ResearchGroupComponent_vue_vue_type_template_id_1863eb64___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ResearchGroupComponent_vue_vue_type_template_id_1863eb64___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ResearchGroupComponent.vue?vue&type=template&id=1863eb64& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ResearchGroupComponent.vue?vue&type=template&id=1863eb64&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/ResearchProjectComponent.vue?vue&type=template&id=388c14ec&":
+/*!*********************************************************************************************!*\
+  !*** ./resources/js/components/ResearchProjectComponent.vue?vue&type=template&id=388c14ec& ***!
+  \*********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ResearchProjectComponent_vue_vue_type_template_id_388c14ec___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ResearchProjectComponent_vue_vue_type_template_id_388c14ec___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ResearchProjectComponent_vue_vue_type_template_id_388c14ec___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ResearchProjectComponent.vue?vue&type=template&id=388c14ec& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ResearchProjectComponent.vue?vue&type=template&id=388c14ec&");
 
 
 /***/ }),
@@ -39090,6 +39200,265 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ResearchGroupComponent.vue?vue&type=template&id=1863eb64&":
+/*!**********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ResearchGroupComponent.vue?vue&type=template&id=1863eb64& ***!
+  \**********************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container card-3 " }, [
+    _c("p", [_vm._v("กลุ่มงานวิจัย")]),
+    _vm._v(" "),
+    _c("div", { staticClass: "card mb-4 " }, [
+      _c("div", { staticClass: "row g-0" }, [
+        _c("div", { staticClass: "col-md-4" }, [
+          _c("img", {
+            staticClass: "img-fluid rounded-start",
+            attrs: { src: "../image/img.jpg", alt: "..." },
+          }),
+          _vm._v(" "),
+          _c("h1", { staticClass: "card-text-1" }, [
+            _vm._v(" Laboratory Supervisor "),
+          ]),
+          _vm._v(" "),
+          _c("h2", { staticClass: "card-text-2" }, [
+            _vm._v(
+              " Assist. Prof. Khamron Sunat\n                    Assist. Prof. Sirapat Chiewchanwattana\n                    Assist. Prof. Punyaphol Horata "
+            ),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-8" }, [
+          _c("div", { staticClass: "card-body" }, [
+            _c("h5", { staticClass: "card-title" }, [
+              _vm._v("ห้องปฏิบัติการการคำนวณแบบฉลาดขั้นสูง (ASC)"),
+            ]),
+            _vm._v(" "),
+            _c("h3", { staticClass: "card-text-3" }, [
+              _vm._v(
+                "This laboratory aims to study and research on the smarttechnology for\n                        high\n                        performance computing which imitates\n                        the nature-inspired behaviors.This laboratory aims to study and research on the\n                        smarttechnology\n                        for high performance computing which imitates the nature-inspired behaviors.\n                        This laboratory aims to study and research on the smarttechnology for high performance\n                        computing\n                        which imitates\n                        the nature-inspired behaviors."
+              ),
+            ]),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                staticClass: "btn btn-outline-secondary",
+                attrs: { href: "#" },
+              },
+              [_vm._v("รายละเอียดเพิ่มเติม")]
+            ),
+          ]),
+        ]),
+      ]),
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "card mb-4 " }, [
+      _c("div", { staticClass: "row g-0" }, [
+        _c("div", { staticClass: "col-md-4" }, [
+          _c("img", {
+            staticClass: "img-fluid rounded-start",
+            attrs: { src: "../image/img.jpg", alt: "..." },
+          }),
+          _vm._v(" "),
+          _c("h1", { staticClass: "card-text-1" }, [
+            _vm._v(" Laboratory Supervisor "),
+          ]),
+          _vm._v(" "),
+          _c("h2", { staticClass: "card-text-2" }, [
+            _vm._v(" Assist. Prof. Pusadee Seresangtakul "),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-8" }, [
+          _c("div", { staticClass: "card-body" }, [
+            _c("h5", { staticClass: "card-title" }, [
+              _vm._v(
+                "ห้องปฎิบัติการประมวลผลภาษาธรรมชาติและการประมวลผลด้านเสียง (NLSP)"
+              ),
+            ]),
+            _vm._v(" "),
+            _c("h3", { staticClass: "card-text-3" }, [
+              _vm._v(
+                "This laboratory aims to study and research on the smart\n                        technology for high performance computing which imitates the nature-inspired behaviors.This\n                        laboratory aims to study and research on the smart\n                        technology for high performance computing which imitates\n                        the nature-inspired behaviors"
+              ),
+            ]),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                staticClass: "btn btn-outline-secondary",
+                attrs: { href: "#" },
+              },
+              [_vm._v("รายละเอียดเพิ่มเติม")]
+            ),
+          ]),
+        ]),
+      ]),
+    ]),
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ResearchProjectComponent.vue?vue&type=template&id=388c14ec&":
+/*!************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ResearchProjectComponent.vue?vue&type=template&id=388c14ec& ***!
+  \************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container refund" }, [
+      _c("p", [_vm._v("โครงการวิจัย")]),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass:
+            "row height d-flex justify-content-center align-items-center",
+        },
+        [
+          _c("div", { staticClass: "search col-md-8" }, [
+            _c("div", { staticClass: "input-group" }, [
+              _c("input", {
+                staticClass: "form-control rounded",
+                attrs: {
+                  type: "search",
+                  placeholder: "Search",
+                  "aria-label": "Search",
+                  "aria-describedby": "search-addon",
+                },
+              }),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-outline-primary",
+                  attrs: { type: "button" },
+                },
+                [_c("i", { staticClass: "fa fa-search" }), _vm._v(" search")]
+              ),
+            ]),
+          ]),
+        ]
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "container table" }, [
+        _c("table", { staticClass: "table table-striped table-hover" }, [
+          _c("thead", [
+            _c("tr", [
+              _c("th", { attrs: { scope: "col" } }, [_vm._v("ลำดับ")]),
+              _vm._v(" "),
+              _c("th", { attrs: { scope: "col" } }, [
+                _vm._v("ประจำปีงบประมาณ"),
+              ]),
+              _vm._v(" "),
+              _c("th", { attrs: { scope: "col" } }, [
+                _vm._v("ระยะเวลาโครงการ"),
+              ]),
+              _vm._v(" "),
+              _c("th", { attrs: { scope: "col" } }, [_vm._v("ประเภทโครการ")]),
+              _vm._v(" "),
+              _c("th", { attrs: { scope: "col" } }, [_vm._v("ชื่อโครงการ")]),
+              _vm._v(" "),
+              _c("th", { attrs: { scope: "col" } }, [
+                _vm._v("ผู้รับผิดชอบโครงการ"),
+              ]),
+              _vm._v(" "),
+              _c("th", { attrs: { scope: "col" } }, [_vm._v("งบประมาณ")]),
+              _vm._v(" "),
+              _c("th", { attrs: { scope: "col" } }, [_vm._v("แหล่งทุนวิจัย")]),
+              _vm._v(" "),
+              _c("th", { attrs: { scope: "col" } }, [_vm._v("สถานะ")]),
+              _vm._v(" "),
+              _c("th", { attrs: { scope: "col" } }, [_vm._v("หมายเหตุ")]),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("tbody", [
+            _c("tr", [
+              _c("td", { attrs: { scope: "row" } }, [_vm._v("1")]),
+              _vm._v(" "),
+              _c("td", [_vm._v("dfdfsdfsd")]),
+              _vm._v(" "),
+              _c("td", [_vm._v("dfaafsaf")]),
+              _vm._v(" "),
+              _c("td", [_vm._v("afdafadfadf")]),
+              _vm._v(" "),
+              _c("td", [_vm._v("adfafdafadf")]),
+              _vm._v(" "),
+              _c("td", [_vm._v("dfadfafadfadf")]),
+              _vm._v(" "),
+              _c("td", [_vm._v("adfadfadfadf")]),
+              _vm._v(" "),
+              _c("td", [_vm._v("adfadfadfa")]),
+              _vm._v(" "),
+              _c("td", [_vm._v("dfadfadfadfad")]),
+              _vm._v(" "),
+              _c("td", [_vm._v("faffeefewqef")]),
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", { attrs: { scope: "row" } }, [_vm._v("2")]),
+              _vm._v(" "),
+              _c("td"),
+              _vm._v(" "),
+              _c("td"),
+              _vm._v(" "),
+              _c("td"),
+              _vm._v(" "),
+              _c("td"),
+              _vm._v(" "),
+              _c("td"),
+              _vm._v(" "),
+              _c("td"),
+              _vm._v(" "),
+              _c("td"),
+              _vm._v(" "),
+              _c("td"),
+            ]),
+          ]),
+        ]),
+      ]),
+    ])
+  },
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ScopusComponent.vue?vue&type=template&id=43c136da&":
 /*!***************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ScopusComponent.vue?vue&type=template&id=43c136da& ***!
@@ -39177,25 +39546,27 @@ var render = function () {
             "div",
             { key: idx, staticClass: "col-xs-12 col-sm-6 col-md-2 p-4" },
             [
-              _c("div", { staticClass: "card p-0" }, [
-                _c("div", { staticClass: "card-image" }, [
-                  _c("img", { attrs: { src: teacher.picture, alt: "" } }),
+              _c("a", { attrs: { href: "/researcher/" + teacher.id } }, [
+                _c("div", { staticClass: "card p-0" }, [
+                  _c("div", { staticClass: "card-image" }, [
+                    _c("img", { attrs: { src: teacher.picture, alt: "" } }),
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "card-content d-flex flex-column align-items-center",
+                    },
+                    [
+                      _c("h5", [
+                        _vm._v(
+                          _vm._s(teacher.fname) + " " + _vm._s(teacher.lname)
+                        ),
+                      ]),
+                    ]
+                  ),
                 ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass:
-                      "card-content d-flex flex-column align-items-center",
-                  },
-                  [
-                    _c("h5", [
-                      _vm._v(
-                        _vm._s(teacher.fname) + " " + _vm._s(teacher.lname)
-                      ),
-                    ]),
-                  ]
-                ),
               ]),
             ]
           )

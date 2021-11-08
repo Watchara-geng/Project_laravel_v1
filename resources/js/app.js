@@ -24,7 +24,8 @@ Vue.component('teacher-component', require('./components/TeacherComponent.vue').
 Vue.component('paper-component', require('./components/PaperComponent.vue').default);
 Vue.component('scopus-component', require('./components/ScopusComponent.vue').default);
 Vue.component('home-component', require('./components/indexComponent.vue').default);
-
+Vue.component('researchproj-component', require('./components/ResearchProjectComponent.vue').default);
+Vue.component('researchgroup-component', require('./components/ResearchGroupComponent').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
