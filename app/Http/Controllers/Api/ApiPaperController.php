@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\TeacherResource;
+use App\Http\Resources\PaperResource;
 use App\Models\Paper;
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -16,14 +16,10 @@ class ApiPaperController extends Controller
      */
     public function index()
     {
-        $paper = Paper::all();
-        //return response()->json($teacher);
-
-        //return response()->json($paper);
-        //$teacher = Teacher::find(5);
-
-        //return response()->json($teacher->paper);
-        return response()->json($paper);
+        $paper = Paper::with('Author')->get();
+        //$user = [1,2,3];
+        //return response()->json($user);
+        return PaperResource::collection($paper);
     }
 
     /**
@@ -34,7 +30,7 @@ class ApiPaperController extends Controller
      */
     public function store(Request $request)
     {
-        $paper = new Paper;
+        /*$paper = new Paper;
         $paper->paper_name = $request->get('paper_name');
         $paper->paper_type = $request->get('paper_type');;
 
@@ -43,7 +39,7 @@ class ApiPaperController extends Controller
         $user = User::findOrFail($request->user_id);
         $paper->teacher()->attach($user);
 
-        return 'Success';
+        return 'Success';*/
     }
 
     /**
@@ -55,9 +51,11 @@ class ApiPaperController extends Controller
     public function show($id)
     {
         //$paper = Paper::findOrFail($id);
-        $teacher = User::findOrFail($id);
+        /*$teacher = User::findOrFail($id);
         $teacher =$teacher->paper;
-        return response()->json($teacher);
+        return response()->json($teacher);*/
+        $paper = Paper::findOrFail($id);
+        return new PaperResource($paper);
     }
 
     /**

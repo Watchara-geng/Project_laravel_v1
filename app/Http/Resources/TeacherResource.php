@@ -23,7 +23,7 @@ class TeacherResource extends JsonResource
             'email'=> $this->email,
             'picture'=> $this->picture,
             'author_name' => $this->lname .' '. substr($this->fname,0,1).'.',
-            'paper'=>$this->paper
+            'paper'=>PaperResource::collection($this->paper),
 
         ];
         return parent::toArray($request);

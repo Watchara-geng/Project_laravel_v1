@@ -2172,18 +2172,21 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   //name:'edit',
   props: ['id'],
   data: function data() {
     return {
+      teachers: [],
       loading: false,
       fname: '',
       lname: '',
       academic_pos: '',
       email: '',
       picture: '',
-      author_name: '',
+      t_author_name: '',
       hindex: '',
       citation_count: '',
       cited_by_count: '',
@@ -2199,9 +2202,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              _this.getDetail();
+              _this.getTeacherData();
 
-            case 1:
+              _this.getDetail(); //console.log(this.teachers);
+
+
+            case 2:
             case "end":
               return _context.stop();
           }
@@ -2210,68 +2216,116 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     }))();
   },
   methods: {
-    addNewPaperTeacher: function addNewPaperTeacher() {
-      axios.post('/api/teachers', {
-        fname: this.fname,
-        lname: this.lname,
-        academic_pos: this.academic_pos,
-        email: this.email
-      });
-    },
-    getDetail: function getDetail() {
+    /*addNewPaperTeacher(){
+        axios.post('/api/teachers',{
+            fname:this.fname,
+            lname:this.lname,
+            academic_pos:this.academic_pos,
+            email:this.email,
+        });
+    },*/
+    getTeacherData: function getTeacherData() {
       var _this2 = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
-        var resultA, teacher, resultB, aid, resultC, data;
+        var result, teachers;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                _this2.loading = true;
-                _context2.next = 3;
-                return axios.get('/api/teachers/' + _this2.id);
+                _context2.next = 2;
+                return axios.get('/api/teachers/');
 
-              case 3:
-                resultA = _context2.sent;
-                teacher = resultA.data.data;
-                _context2.next = 7;
-                return axios.get('https://api.elsevier.com/content/search/author?query=authlast(' + teacher.lname + ')%20and%20authfirst(' + teacher.fname + ')%20&apiKey=7f59af901d2d86f78a1fd60c1bf9426a');
+              case 2:
+                result = _context2.sent;
+                teachers = result.data.data;
+                _this2.teachers = teachers;
 
-              case 7:
-                resultB = _context2.sent;
-                aid = resultB.data;
-                aid = aid["search-results"]["entry"][0]['dc:identifier'];
-                aid = aid.split(":");
-                aid = aid[1];
-                _context2.next = 14;
-                return axios.get('https://api.elsevier.com/content/author?author_id=' + aid + '&view=metrics&apiKey=6ab3c2a01c29f0e36b00c8fa1d013f83&httpAccept=application%2Fjson');
-
-              case 14:
-                resultC = _context2.sent;
-                data = resultC.data;
-                data = data['author-retrieval-response'][0];
-                _this2.hindex = data['h-index'];
-                data = data['coredata'];
-                _this2.fname = teacher.fname;
-                _this2.lname = teacher.lname;
-                _this2.academic_pos = teacher.academic_pos;
-                _this2.email = teacher.email;
-                _this2.author_name = teacher.author_name;
-                _this2.picture = teacher.picture;
-                _this2.papers = teacher.paper;
-                _this2.citation_count = data['citation-count'];
-                _this2.cited_by_count = data['citation-count'];
-                _this2.document_count = data['document-count'];
-                _this2.loading = false;
-                console.log(aid);
-
-              case 31:
+              case 5:
               case "end":
                 return _context2.stop();
             }
           }
         }, _callee2);
       }))();
+    },
+    getDetail: function getDetail() {
+      var _this3 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
+        var resultA, teacher, resultB, aid, resultC, data;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                _this3.loading = true;
+                _context3.next = 3;
+                return axios.get('/api/teachers/' + _this3.id);
+
+              case 3:
+                resultA = _context3.sent;
+                teacher = resultA.data.data;
+                _context3.next = 7;
+                return axios.get('https://api.elsevier.com/content/search/author?query=authlast(' + teacher.lname + ')%20and%20authfirst(' + teacher.fname + ')%20&apiKey=7f59af901d2d86f78a1fd60c1bf9426a');
+
+              case 7:
+                resultB = _context3.sent;
+                aid = resultB.data;
+                aid = aid["search-results"]["entry"][0]['dc:identifier'];
+                aid = aid.split(":");
+                aid = aid[1];
+                _context3.next = 14;
+                return axios.get('https://api.elsevier.com/content/author?author_id=' + aid + '&view=metrics&apiKey=6ab3c2a01c29f0e36b00c8fa1d013f83&httpAccept=application%2Fjson');
+
+              case 14:
+                resultC = _context3.sent;
+                data = resultC.data;
+                data = data['author-retrieval-response'][0];
+                _this3.hindex = data['h-index'];
+                data = data['coredata'];
+                _this3.fname = teacher.fname;
+                _this3.lname = teacher.lname;
+                _this3.academic_pos = teacher.academic_pos;
+                _this3.email = teacher.email;
+                _this3.t_author_name = teacher.author_name;
+                _this3.picture = teacher.picture;
+                _this3.papers = teacher.paper;
+                _this3.citation_count = data['citation-count'];
+                _this3.cited_by_count = data['citation-count'];
+                _this3.document_count = data['document-count'];
+                _this3.loading = false;
+
+              case 30:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3);
+      }))();
+    },
+    filterA: function filterA(value, teachers) {
+      //Arch-int N.
+      function search(nameKey, myArray) {
+        for (var i = 0; i < myArray.length; i++) {
+          if (myArray[i].author_name === nameKey) {
+            return myArray[i].id;
+          }
+        }
+
+        return 0;
+      }
+
+      var array = [{
+        name: "Arch-Int N.",
+        id: 1
+      }, {
+        name: "So-In C.",
+        id: 2
+      }];
+      var resultObject = search(value, teachers);
+      value = resultObject;
+      console.log(teachers);
+      return value;
     }
   }
 });
@@ -39018,6 +39072,8 @@ var render = function () {
             _vm._v(" "),
             _c("h6", [_vm._v("hindex " + _vm._s(_vm.hindex))]),
             _vm._v(" "),
+            _c("h6", [_vm._v("author_name " + _vm._s(_vm.t_author_name))]),
+            _vm._v(" "),
             _c("table", { staticClass: "table" }, [
               _vm._m(0),
               _vm._v(" "),
@@ -39038,6 +39094,28 @@ var render = function () {
                     _c("td", [_vm._v(_vm._s(paper.paper_doi))]),
                     _vm._v(" "),
                     _c("td", [_vm._v(_vm._s(paper.paper_citation))]),
+                    _vm._v(" "),
+                    _c(
+                      "td",
+                      _vm._l(paper.author, function (p, i) {
+                        return _c("span", { key: i }, [
+                          "" + _vm.filterA(p.author_name, _vm.teachers) == 0
+                            ? _c("a", [_vm._v(_vm._s(p.author_name))])
+                            : _c(
+                                "a",
+                                {
+                                  attrs: {
+                                    href:
+                                      "/researcher/" +
+                                      _vm.filterA(p.author_name, _vm.teachers),
+                                  },
+                                },
+                                [_vm._v(_vm._s(p.author_name))]
+                              ),
+                        ])
+                      }),
+                      0
+                    ),
                   ])
                 }),
                 0
@@ -39065,6 +39143,8 @@ var staticRenderFns = [
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Doi")]),
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Ciations")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Author")]),
       ]),
     ])
   },
@@ -39163,7 +39243,7 @@ var render = function () {
             { key: idx, staticClass: "col-xs-12 col-sm-6 col-md-2 p-4" },
             [
               _c("div", { staticClass: "card" }, [
-                _c("a", { attrs: { href: "/researchers/" + teacher.id } }, [
+                _c("a", { attrs: { href: "/researcher/" + teacher.id } }, [
                   _c("img", {
                     staticClass: "rounded mx-auto d-block",
                     attrs: { src: teacher.picture },

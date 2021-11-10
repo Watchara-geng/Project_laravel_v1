@@ -35,6 +35,15 @@ class DatabaseSeeder extends Seeder
             'picture' => 'images/imag_teacher/Chakchai.jpg',
         ]);
         User::create([
+            'fname'=> 'Somjit',
+            'lname'=> 'Arch-int',
+            'aca_pos'=> 'Assoc.Prof.Dr.',
+            'email' => 'somjit@kku.ac.th',
+            'picture' => 'images/imag_teacher/Somjit.jpg',
+            'password' => Hash::make('123456789'),
+            'role' => 1
+        ]);
+        User::create([
             'fname'=> 'Chaiyapon',
             'lname'=> 'Keeratikasikorn',
             'aca_pos'=> 'Assoc.Prof.Dr.',
