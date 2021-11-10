@@ -41,7 +41,7 @@
                         <a class="nav-link" href="/researcher">Researchers</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/researchfund">Research Fund</a>
+                        <a class="nav-link" href="/researchproject">Research Project</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/researchgroup">Research Group</a>

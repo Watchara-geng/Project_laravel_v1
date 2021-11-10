@@ -5,6 +5,8 @@ use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\PaperController;
 use App\Http\Controllers\ScopuscallController;
 use App\Http\Controllers\ScopusController;
+use App\Http\Controllers\ResearchProjectController;
+use App\Http\Controllers\ResearchGroupController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,6 +33,8 @@ Route::resource('paper', PaperController::class,["name"=>"papers"]);
 Route::resource('callscopus3', ScopuscallController::class);
 //Route::resource('scopus', ScopusController::class,["name"=>"papers"]);
 
+Route::get('/researchproject',[ResearchProjectController::class,'researchproj']);
+Route::get('/researchgroup',[ResearchGroupController::class,'researchgroup']);
 //auth route for both
 /*Route::group(['middleware' => ['auth']], function() {
     Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index')->name('dashboard');

@@ -3,7 +3,10 @@
 
     <div class="container">
         <div v-if="loading" class="loader">
-            loading.........
+            <div class="d-flex justify-content-center mt-5">
+                <div class="spinner-border text-info" role="status"></div>
+                <p> Loading...</p>
+            </div>
         </div>
         <div v-else>
             <h2>งานวิจัย</h2>
@@ -12,10 +15,10 @@
             <img :src="'../'+picture">
             <h6>{{academic_pos}}</h6>
             <h6>{{email}}</h6>
-            <h6>citation_count {{citation_count}}</h6>
-            <h6>document_count {{document_count}}</h6>
-            <h6>cited_by_count {{cited_by_count}}</h6>
-            <h6>hindex {{hindex}}</h6>
+            <h6>Citation count {{citation_count}}</h6>
+            <h6>Document count {{document_count}}</h6>
+            <h6>Cited By count {{cited_by_count}}</h6>
+            <h6>H-index {{hindex}}</h6>
 
             <h6>author_name {{t_author_name}}</h6>
     
