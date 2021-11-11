@@ -588,8 +588,8 @@ select {
     margin: 2rem;
     border-radius: 20px;
     overflow: hidden;
-    max-width: 280px;
-    max-height: 340px;
+    max-width: 140px;
+    max-height: 200px;
     cursor: pointer;
     border: none;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2)
@@ -613,7 +613,7 @@ select {
     color: #ffffff;
     background: rgba(5, 66, 92, 0.541);
     backdrop-filter: blur(18px);
-    min-height: 80px;
+    min-height: 60px;
     width: 100%;
     transition: bottom .4s ease-in;
     box-shadow: 0 -10px 10px rgba(51, 51, 51, 0.1);
@@ -640,8 +640,8 @@ select {
 .card-2 .card .card-content h5 {
     transition: 0.8s;
     font-weight: 500;
-    font-size: 14px;
-    letter-spacing: 3px;
+    font-size: 9px;
+    letter-spacing: 2px;
     color: #ffffff;
 }
 

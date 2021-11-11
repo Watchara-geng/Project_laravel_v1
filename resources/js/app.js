@@ -26,6 +26,7 @@ Vue.component('scopus-component', require('./components/ScopusComponent.vue').de
 Vue.component('home-component', require('./components/indexComponent.vue').default);
 Vue.component('researchproj-component', require('./components/ResearchProjectComponent.vue').default);
 Vue.component('researchgroup-component', require('./components/ResearchGroupComponent').default);
+//Vue.component('chart-component', require('./components/ChartContainer.vue').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -34,4 +35,5 @@ Vue.component('researchgroup-component', require('./components/ResearchGroupComp
 
 const app = new Vue({
     el: '#app',
+
 });

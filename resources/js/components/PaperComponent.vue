@@ -1,5 +1,4 @@
 <template >
-<div >
 
     <div class="container">
         <div v-if="loading" class="loader">
@@ -19,46 +18,42 @@
             <h6>Document count {{document_count}}</h6>
             <h6>Cited By count {{cited_by_count}}</h6>
             <h6>H-index {{hindex}}</h6>
-
-            <h6>author_name {{t_author_name}}</h6>
     
-<table class="table">
-  <thead>
-      <tr>
-      <th scope="col">Paper Name</th>
-      <th scope="col">Year</th>
-      <th scope="col">Journals/Transactions</th>
-      <th scope="col">Doi</th>
-      <th scope="col">Ciations</th>
-      <th scope="col">Author</th>
-    </tr>
-  </thead>
-  <tbody>
+            <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">Paper Name</th>
+                <th scope="col">Year</th>
+                <th scope="col">Journals/Transactions</th>
+                <th scope="col">Doi</th>
+                <th scope="col">Ciations</th>
+                <th scope="col">Author</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(paper, idx) in papers" :key="idx">
+                    <td>{{paper.paper_name}}</td>
+                    <td>{{new Date(paper.paper_yearpub).getFullYear()}}</td>
+                    <td>{{paper.paper_sourcetitle}}</td>
+                    <td>{{paper.paper_doi}}</td>
+                    <td>{{paper.paper_citation}}</td>
+                    <td>
+                        <span v-for="(p, i) in paper.author" :key="i">  
+                            <p><a v-if="`${filterA(p.author_name,teachers)}` == 0">{{p.author_name}}</a>
+                            <a v-else v-bind:href="`/researcher/${filterA(p.author_name,teachers)}`">{{p.author_name}}</a></p>
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+    </div>
 
-    <tr v-for="(paper, idx) in papers" :key="idx">
-        <td>{{paper.paper_name}}</td>
-        <td>{{new Date(paper.paper_yearpub).getFullYear()}}</td>
-        <td>{{paper.paper_sourcetitle}}</td>
-        <td>{{paper.paper_doi}}</td>
-        <td>{{paper.paper_citation}}</td>
-        <td >
-            <span v-for="(p, i) in paper.author" :key="i">  
-                <a v-if="`${filterA(p.author_name,teachers)}` == 0">{{p.author_name}}</a>
-                <a v-else v-bind:href="`/researcher/${filterA(p.author_name,teachers)}`">{{p.author_name}}</a>   
-            </span>
-        </td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-  </div>
 </template>
 
 <script>
+
 export default {
-    //name:'edit',
     props:['id'],
     data(){
         return{
@@ -74,15 +69,14 @@ export default {
             citation_count:'',
             cited_by_count:'',
             document_count:'',
-            papers:[]
+            papers:[],
         }
-
     },
     async mounted(){
+        
         this.getTeacherData();
         this.getDetail();
-        //console.log(this.teachers);
-
+       
     },
     methods:{
         /*addNewPaperTeacher(){
@@ -125,6 +119,7 @@ export default {
             this.document_count=data['document-count']
             this.loading = false
         },
+
         filterA(value,teachers) { //Arch-int N.
            function search(nameKey, myArray){
                 for (var i=0; i < myArray.length; i++) {
@@ -134,18 +129,11 @@ export default {
                 }
                 return 0;
             }
-            var array = [
-                { name:"Arch-Int N.", id:1 },
-                { name:"So-In C.", id:2},
-                
-            ];
 
             var resultObject = search(value, teachers);
             value=resultObject;
             console.log(teachers);
             return value
-            
-            
         },
     }
 

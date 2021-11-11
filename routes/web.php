@@ -7,6 +7,7 @@ use App\Http\Controllers\ScopuscallController;
 use App\Http\Controllers\ScopusController;
 use App\Http\Controllers\ResearchProjectController;
 use App\Http\Controllers\ResearchGroupController;
+use App\Http\Controllers\CalltciController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,6 +25,10 @@ Route::get('/', function () {
 Route::get('scopus', function () {
     return view('callscopus');
 });
+Route::get('test', function () {
+    return view('teacherdash');
+});
+Route::get('/tci', [CalltciController::class, 'run']);
 
 //Route::get('scopuscall',"ScopusController@callapi");
 //Route::resource('researchers', [App\Http\Controllers\TeacherController::class, 'callapi']);
@@ -51,7 +56,7 @@ Route::group(['middleware' => ['auth', 'role:teacher']], function() {
 });*/
 
 //Route::resource('paper/create', 'PaperController@create');
-
+/*
 Route::get('/login', [AuthController::class, 'index'])->name('login');
 Route::post('/custom-signin', [AuthController::class, 'createSignin'])->name('signin.custom');
 
@@ -61,7 +66,7 @@ Route::post('/create-user', [AuthController::class, 'customSignup'])->name('user
 
 
 Route::get('/dashboard', [AuthController::class, 'dashboardView'])->name('dashboard');
-Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');*/
 require __DIR__.'/auth.php';
 
 Auth::routes();

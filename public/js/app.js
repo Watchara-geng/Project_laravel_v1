@@ -2172,14 +2172,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-<<<<<<< HEAD
-=======
-//
->>>>>>> 29740a3bfaf63826fbfbd01fff4a56902c6a02d5
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  //name:'edit',
   props: ['id'],
   data: function data() {
     return {
@@ -2208,8 +2201,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             case 0:
               _this.getTeacherData();
 
-              _this.getDetail(); //console.log(this.teachers);
-
+              _this.getDetail();
 
             case 2:
             case "end":
@@ -2319,13 +2311,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         return 0;
       }
 
-      var array = [{
-        name: "Arch-Int N.",
-        id: 1
-      }, {
-        name: "So-In C.",
-        id: 2
-      }];
       var resultObject = search(value, teachers);
       value = resultObject;
       console.log(teachers);
@@ -2458,7 +2443,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     this.getTeacherData();
@@ -2517,7 +2501,8 @@ Vue.component('paper-component', __webpack_require__(/*! ./components/PaperCompo
 Vue.component('scopus-component', __webpack_require__(/*! ./components/ScopusComponent.vue */ "./resources/js/components/ScopusComponent.vue")["default"]);
 Vue.component('home-component', __webpack_require__(/*! ./components/indexComponent.vue */ "./resources/js/components/indexComponent.vue")["default"]);
 Vue.component('researchproj-component', __webpack_require__(/*! ./components/ResearchProjectComponent.vue */ "./resources/js/components/ResearchProjectComponent.vue")["default"]);
-Vue.component('researchgroup-component', __webpack_require__(/*! ./components/ResearchGroupComponent */ "./resources/js/components/ResearchGroupComponent.vue")["default"]);
+Vue.component('researchgroup-component', __webpack_require__(/*! ./components/ResearchGroupComponent */ "./resources/js/components/ResearchGroupComponent.vue")["default"]); //Vue.component('chart-component', require('./components/ChartContainer.vue').default);
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -39160,58 +39145,54 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "container" }, [
-      _vm.loading
-        ? _c("div", { staticClass: "loader" }, [_vm._m(0)])
-        : _c("div", [
-            _c("h2", [_vm._v("งานวิจัย")]),
+  return _c("div", { staticClass: "container" }, [
+    _vm.loading
+      ? _c("div", { staticClass: "loader" }, [_vm._m(0)])
+      : _c("div", [
+          _c("h2", [_vm._v("งานวิจัย")]),
+          _vm._v(" "),
+          _c("h6", [_vm._v(_vm._s(_vm.fname))]),
+          _vm._v(" "),
+          _c("h6", [_vm._v(_vm._s(_vm.lname))]),
+          _vm._v(" "),
+          _c("img", { attrs: { src: "../" + _vm.picture } }),
+          _vm._v(" "),
+          _c("h6", [_vm._v(_vm._s(_vm.academic_pos))]),
+          _vm._v(" "),
+          _c("h6", [_vm._v(_vm._s(_vm.email))]),
+          _vm._v(" "),
+          _c("h6", [_vm._v("Citation count " + _vm._s(_vm.citation_count))]),
+          _vm._v(" "),
+          _c("h6", [_vm._v("Document count " + _vm._s(_vm.document_count))]),
+          _vm._v(" "),
+          _c("h6", [_vm._v("Cited By count " + _vm._s(_vm.cited_by_count))]),
+          _vm._v(" "),
+          _c("h6", [_vm._v("H-index " + _vm._s(_vm.hindex))]),
+          _vm._v(" "),
+          _c("table", { staticClass: "table" }, [
+            _vm._m(1),
             _vm._v(" "),
-            _c("h6", [_vm._v(_vm._s(_vm.fname))]),
-            _vm._v(" "),
-            _c("h6", [_vm._v(_vm._s(_vm.lname))]),
-            _vm._v(" "),
-            _c("img", { attrs: { src: "../" + _vm.picture } }),
-            _vm._v(" "),
-            _c("h6", [_vm._v(_vm._s(_vm.academic_pos))]),
-            _vm._v(" "),
-            _c("h6", [_vm._v(_vm._s(_vm.email))]),
-            _vm._v(" "),
-            _c("h6", [_vm._v("Citation count " + _vm._s(_vm.citation_count))]),
-            _vm._v(" "),
-            _c("h6", [_vm._v("Document count " + _vm._s(_vm.document_count))]),
-            _vm._v(" "),
-            _c("h6", [_vm._v("Cited By count " + _vm._s(_vm.cited_by_count))]),
-            _vm._v(" "),
-            _c("h6", [_vm._v("H-index " + _vm._s(_vm.hindex))]),
-            _vm._v(" "),
-            _c("h6", [_vm._v("author_name " + _vm._s(_vm.t_author_name))]),
-            _vm._v(" "),
-            _c("table", { staticClass: "table" }, [
-              _vm._m(1),
-              _vm._v(" "),
-              _c(
-                "tbody",
-                _vm._l(_vm.papers, function (paper, idx) {
-                  return _c("tr", { key: idx }, [
-                    _c("td", [_vm._v(_vm._s(paper.paper_name))]),
-                    _vm._v(" "),
-                    _c("td", [
-                      _vm._v(
-                        _vm._s(new Date(paper.paper_yearpub).getFullYear())
-                      ),
-                    ]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(paper.paper_sourcetitle))]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(paper.paper_doi))]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(paper.paper_citation))]),
-                    _vm._v(" "),
-                    _c(
-                      "td",
-                      _vm._l(paper.author, function (p, i) {
-                        return _c("span", { key: i }, [
+            _c(
+              "tbody",
+              _vm._l(_vm.papers, function (paper, idx) {
+                return _c("tr", { key: idx }, [
+                  _c("td", [_vm._v(_vm._s(paper.paper_name))]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._v(_vm._s(new Date(paper.paper_yearpub).getFullYear())),
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(paper.paper_sourcetitle))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(paper.paper_doi))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(paper.paper_citation))]),
+                  _vm._v(" "),
+                  _c(
+                    "td",
+                    _vm._l(paper.author, function (p, i) {
+                      return _c("span", { key: i }, [
+                        _c("p", [
                           "" + _vm.filterA(p.author_name, _vm.teachers) == 0
                             ? _c("a", [_vm._v(_vm._s(p.author_name))])
                             : _c(
@@ -39225,17 +39206,17 @@ var render = function () {
                                 },
                                 [_vm._v(_vm._s(p.author_name))]
                               ),
-                        ])
-                      }),
-                      0
-                    ),
-                  ])
-                }),
-                0
-              ),
-            ]),
+                        ]),
+                      ])
+                    }),
+                    0
+                  ),
+                ])
+              }),
+              0
+            ),
           ]),
-    ]),
+        ]),
   ])
 }
 var staticRenderFns = [
@@ -39615,55 +39596,44 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "container card-2" }, [
-      _c("p", [_vm._v(" Researchers ")]),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "row" },
-        _vm._l(_vm.teachers, function (teacher, idx) {
-          return _c(
-            "div",
-            { key: idx, staticClass: "col-xs-12 col-sm-6 col-md-2 p-4" },
-            [
-<<<<<<< HEAD
-              _c("div", { staticClass: "card" }, [
-                _c("a", { attrs: { href: "/researcher/" + teacher.id } }, [
-                  _c("img", {
-                    staticClass: "rounded mx-auto d-block",
-                    attrs: { src: teacher.picture },
-                  }),
-=======
-              _c("a", { attrs: { href: "/researcher/" + teacher.id } }, [
-                _c("div", { staticClass: "card p-0" }, [
-                  _c("div", { staticClass: "card-image" }, [
-                    _c("img", { attrs: { src: teacher.picture, alt: "" } }),
-                  ]),
->>>>>>> 29740a3bfaf63826fbfbd01fff4a56902c6a02d5
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "card-content d-flex flex-column align-items-center",
-                    },
-                    [
-                      _c("h5", [
-                        _vm._v(
-                          _vm._s(teacher.fname) + " " + _vm._s(teacher.lname)
-                        ),
-                      ]),
-                    ]
-                  ),
+  return _c("div", { staticClass: "container card-2" }, [
+    _c("p", [_vm._v(" Researchers ")]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "row" },
+      _vm._l(_vm.teachers, function (teacher, idx) {
+        return _c(
+          "div",
+          { key: idx, staticClass: "col-xs-12 col-sm-6 col-md-2 p-4" },
+          [
+            _c("a", { attrs: { href: "/researcher/" + teacher.id } }, [
+              _c("div", { staticClass: "card p-0" }, [
+                _c("div", { staticClass: "card-image" }, [
+                  _c("img", { attrs: { src: teacher.picture, alt: "" } }),
                 ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "card-content d-flex flex-column align-items-center",
+                  },
+                  [
+                    _c("h5", [
+                      _vm._v(
+                        _vm._s(teacher.fname) + " " + _vm._s(teacher.lname)
+                      ),
+                    ]),
+                  ]
+                ),
               ]),
-            ]
-          )
-        }),
-        0
-      ),
-    ]),
+            ]),
+          ]
+        )
+      }),
+      0
+    ),
   ])
 }
 var staticRenderFns = []
